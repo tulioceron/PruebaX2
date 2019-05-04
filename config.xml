@@ -1,0 +1,83 @@
+<? xml version = " 1.0 " encoding = " UTF-8 " ?>
+
+<! - Referencia de config.xml: https://build.phonegap.com/docs/config-xml ->
+< widget xmlns = " http://www.w3.org/ns/widgets "
+        xmlns: gap = " http://phonegap.com/ns/1.0 "
+        id = " practica_01 "
+        version = " 1.0.0 " >
+
+    < nombre > Practiva X </ nombre >
+
+    < descripción >
+        Práctica 1
+    </ descripción >
+
+    < author  href = " http://www.uvp.edu.mx "  email = " marcotulio0@gmail.com " >
+        Marco Tulio Ceron
+    </ autor >
+
+    <! -
+        Habilite permisos de API individuales definiendo cada uno aquí.
+        El permiso 'dispositivo' es necesario para el evento 'deviceready'.
+    ->
+    < feature  name = " http://api.phonegap.com/1.0/device " />
+	< feature  name = " http://api.phonegap.com/1.0/camera " />
+	< feature  name = " http://api.phonegap.com/1.0/file " />
+	< feature  name = " http://api.phonegap.com/1.0/network " />
+	< feature  name = " http://api.phonegap.com/1.0/notification " />
+
+    <! -
+        Si no desea que se agreguen permisos a su aplicación, agregue el
+        siguiente etiqueta a tu config.xml; todavía tendrás internet
+        permiso en su aplicación, que PhoneGap requiere.
+    ->
+
+    <! - Personaliza tu aplicación y plataforma con el elemento de preferencias. ->
+    < preferences  name = " phonegap-version "            value = " 2.5.0 " />           <! - all: versión actual de PhoneGap ->
+    < preferences  name = " orientación "                 value = " portrait " />         <! - all: por defecto significa que tanto el paisaje como el retrato están habilitados ->
+    < preferences  name = " target-device "               value = " universal " />       <! - all: posibles valores, teléfono, tableta o universal ->
+    < preferences  name = " fullscreen "                  value = " true " />            <! - all: oculta la barra de estado en la parte superior de la pantalla ->
+    < preferences  name = " webviewbounce "               value = " false " />            <! - ios: controla si la pantalla 'rebota' cuando se desplaza más allá de la parte superior ->
+    < preferences  name = " prerendered-icon "            value = " true " />            <! - ios: si el ícono está premeditado, iOS no aplicará su brillo al ícono de la aplicación en la pantalla de inicio del usuario ->
+    < preferences  name = " stay-in-webview "             value = " false " />           <! - ios: los enlaces externos deberían abrirse en el navegador predeterminado, 'true' usaría la vista web en la que se encuentra la aplicación ->
+    < preferences  name = " ios-statusbarstyle "          value = " black-opaque " />    <! - ios: black-translucent aparecerá negro porque la vista web de PhoneGap no aparece debajo de la barra de estado ->
+    < preferences  name = " detect-data-types "           value = " true " />            <! - ios: controla si los tipos de datos (como el número de teléfono y las fechas) se convierten automáticamente en enlaces por el sistema ->
+    < preferences  name = " exit-on-suspend "             value = " false " />           <! - ios: si se establece en true, la aplicación terminará cuando se presione el botón de inicio ->
+    < preferences  name = " show-splash-screen-spinner "  value = " true " />            <! - ios: si se establece en false, el spinner no aparecerá en la pantalla de bienvenida durante la carga de la aplicación ->
+    < preferences  name = " auto-hide-splash-screen "     value = " true " />            <! - ios: si se establece en false, la pantalla de bienvenida debe estar oculta usando una API de JavaScript ->
+    < preferences  name = " disable-cursor "              value = " false " />           <! - blackberry: evita que se muestre un icono / cursor del mouse en la aplicación ->
+    < preferences  name = " android-minSdkVersion "       value = " 7 " />              <! - android: la versión MIN SDK es compatible con el dispositivo de destino. La versión MAX está en blanco por defecto. ->
+    < preferences  name = " android-installLocation "     value = " auto " />            <! - android: ubicación de instalación de la aplicación. 'auto' elegirá. 'internalOnly' es la memoria del dispositivo. 'preferExternal' es una tarjeta SD. ->
+
+    <! - Los complementos también se pueden agregar aquí. ->
+    <! -
+        <gap: plugin name = "Example" />
+        Una lista de complementos disponibles está disponible en https://build.phonegap.com/docs/plugins
+    ->
+
+    <! - Define el ícono de la aplicación para cada plataforma. ->
+    < icon  src = " img / icon.jpg " />
+    < icon  src = " img / icon.jpg "    gap : platform = " android "     gap : density = " ldpi " />
+    < icon  src = " img / icon.jpg "    gap : platform = " android "     gap : density = " mdpi " />
+    < icon  src = " img / icon.jpg "    gap : platform = " android "     gap : density = " hdpi " />
+    < icon  src = " img / icon.jpg "   gap : platform = " android "     gap : density = " xhdpi " />
+
+    <! - Defina la pantalla de inicio de la aplicación para cada plataforma. ->
+    < gap : splash  src = " img / iniciao.jpg "   gap : platform = " android "  gap : density = " ldpi " />
+    < gap : splash  src = " img / inicio.jpg "   gap : platform = " android "  gap : density = " mdpi " />
+    < gap : splash  src = " img / inicio.jpg "   gap : platform = " android "  gap : density = " hdpi " />
+    < gap : splash  src = " img / inicio.jpg "  gap : platform = " android "  gap : density = " xhdpi " />
+    <! -
+        Definir el acceso a dominios externos.
+        <access />: una etiqueta de acceso en blanco niega el acceso a todos los recursos externos. ->
+        < access  origin = " * " /> <! - una etiqueta de acceso comodín permite el acceso a todos los recursos externos.
+        De lo contrario, puede especificar dominios específicos:
+    ->
+    < access  origin = " http: //127.0.0.1* " /> <! - permitir páginas locales ->
+    <! -
+        <access origin = "http://phonegap.com" /> - permite cualquier solicitud segura a http://phonegap.com/
+        <access origin = "http://phonegap.com" subdomains = "true" /> - igual que arriba, pero incluye subdominios, como http://build.phonegap.com/
+        <access origin = "http://phonegap.com" browserOnly = "true" /> - solo permite que el navegador secundario abra http://phonegap.com.
+    ->
+
+</ widget >
